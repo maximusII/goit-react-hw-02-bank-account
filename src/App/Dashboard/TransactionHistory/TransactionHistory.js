@@ -8,8 +8,8 @@ class TransactionHistory extends Component {
       PropTypes.shape({
         id: PropTypes.string,
         type: PropTypes.string.isRequired,
-        amount: PropTypes.number.isRequired,
-        date: PropTypes.date.isRequired,
+        amount: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
       }),
     ),
   };
@@ -24,18 +24,18 @@ class TransactionHistory extends Component {
       items.length > 0 && (
         <table className={styles.history}>
           <thead>
-            <tr>
-              <th>Transaction</th>
-              <th>Amount</th>
-              <th>Date</th>
+            <tr className="styles.head">
+              <th className="styles.column">Transaction</th>
+              <th className="styles.column">Amount</th>
+              <th className="styles.column">Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="styles.body">
             {items.map(item => (
               <tr key={item.id}>
-                <td>{item.type}</td>
-                <td>{item.amount}$</td>
-                <td>{item.date}</td>
+                <td className="styles.column">{item.type}</td>
+                <td className="styles.column">{item.amount}$</td>
+                <td className="styles.column">{item.date}</td>
               </tr>
             ))}
           </tbody>

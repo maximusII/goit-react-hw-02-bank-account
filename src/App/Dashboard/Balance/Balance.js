@@ -6,8 +6,8 @@ import styles from './Balance.module.css';
 class Balance extends Component {
   static propTypes = {
     balance: PropTypes.number.isRequired,
-    income: PropTypes.func,
-    expenses: PropTypes.func,
+    income: PropTypes.number,
+    expenses: PropTypes.number,
   };
 
   static defaultProps = {

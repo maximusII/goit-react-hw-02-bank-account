@@ -10,27 +10,7 @@ toast.configure();
 
 class Dashboard extends Component {
   state = {
-    transactions: [
-      // {
-      //   id: shortid.generate(),
-      //   type: "withdrawal",
-      //   amount: 100,
-      //   date: "25.12.07"
-      // },
-      // {
-      //   id: shortid.generate(),
-      //   type: "deposit",
-      //   amount: 1000,
-      //   date: "15.05.07"
-      // },
-      // {
-      //   id: shortid.generate(),
-      //   type: "deposit",
-      //   amount: 500,
-      //   date: "25.12.07"
-      // }
-    ],
-
+    transactions: [],
     balance: 0,
   };
 

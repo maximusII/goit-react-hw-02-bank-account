@@ -1,0 +1,9 @@
+.history {
+  margin: 0 auto;
+  width: 870px;
+  table-layout: fixed;
+}
+
+.column {
+  width: 100%;
+}

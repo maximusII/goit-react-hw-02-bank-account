@@ -13,11 +13,11 @@ class Controls extends Component {
     const { onDeposit, onWithdraw } = this.props;
     return (
       <section className={styles.controls}>
-        <input type="number" name="amount" />
-        <button type="button" onClick={onDeposit}>
+        <input className={styles.input} type="number" name="amount" />
+        <button className={styles.buttons} type="button" onClick={onDeposit}>
           Deposit
         </button>
-        <button type="button" onClick={onWithdraw}>
+        <button className={styles.buttons} type="button" onClick={onWithdraw}>
           Withdraw
         </button>
       </section>

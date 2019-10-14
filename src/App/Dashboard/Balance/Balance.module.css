@@ -8,3 +8,8 @@
 .amount {
   margin-right: 30px;
 }
+
+.balance {
+  padding: 40px;
+  font-weight: bold;
+}
