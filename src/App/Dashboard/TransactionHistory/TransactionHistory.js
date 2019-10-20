@@ -23,19 +23,19 @@ class TransactionHistory extends Component {
     return (
       items.length > 0 && (
         <table className={styles.history}>
-          <thead>
-            <tr className="styles.head">
-              <th className="styles.column">Transaction</th>
-              <th className="styles.column">Amount</th>
-              <th className="styles.column">Date</th>
+          <thead className={styles.head}>
+            <tr>
+              <th className={styles.column}>TRANSACTION</th>
+              <th className={styles.column}>AMOUNT</th>
+              <th className={styles.column}>DATE</th>
             </tr>
           </thead>
-          <tbody className="styles.body">
+          <tbody className={styles.body}>
             {items.map(item => (
               <tr key={item.id}>
-                <td className="styles.column">{item.type}</td>
-                <td className="styles.column">{item.amount}$</td>
-                <td className="styles.column">{item.date}</td>
+                <td className={styles.column}>{item.type}</td>
+                <td className={styles.column}>{item.amount}$</td>
+                <td className={styles.column}>{item.date}</td>
               </tr>
             ))}
           </tbody>

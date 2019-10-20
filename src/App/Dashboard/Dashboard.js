@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import styles from './Dashboard.module.css';
 import Controls from './Controls/Controls';
 import Balance from './Balance/Balance';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
-
-toast.configure();
 
 class Dashboard extends Component {
   state = {
@@ -14,10 +13,12 @@ class Dashboard extends Component {
     balance: 0,
   };
 
-  notifyZeroOrLess = () => toast('Введите сумму для проведения операции!');
+  notifyZeroOrLess = () => {
+    toast.error('Введите сумму для проведения операции!');
+  };
 
   notifyNotEnoughMoney = () =>
-    toast('На счету недостаточно средств для проведения операции!');
+    toast.error('На счету недостаточно средств для проведения операции!');
 
   inputClear = e => {
     e.target.parentNode.children.amount.value = '';
@@ -95,11 +96,16 @@ class Dashboard extends Component {
     const allExpenses = this.allExpenses();
 
     const { transactions, balance } = this.state;
+
     return (
       <div className={styles.dashboard}>
         <Controls onDeposit={this.onDeposit} onWithdraw={this.onWithdraw} />
         <Balance balance={balance} income={allIncome} expenses={allExpenses} />
         <TransactionHistory items={transactions} />
+        <ToastContainer
+          position={toast.POSITION.BOTTOM_LEFT}
+          autoClose={3000}
+        />
       </div>
     );
   }
