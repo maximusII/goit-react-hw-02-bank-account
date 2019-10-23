@@ -10,7 +10,6 @@ import TransactionHistory from './TransactionHistory/TransactionHistory';
 class Dashboard extends Component {
   state = {
     transactions: [],
-    balance: 0,
   };
 
   notifyZeroOrLess = () => {
@@ -24,53 +23,41 @@ class Dashboard extends Component {
     e.target.parentNode.children.amount.value = '';
   };
 
-  onDeposit = amount => {
+  onTrans = amount => {
     const transactionSum = amount.target.parentNode.children.amount.value;
     this.inputClear(amount);
     if (transactionSum <= 0) {
       return this.notifyZeroOrLess();
     }
-
-    const date = new Date().toLocaleString();
-
-    const newTransDeposit = {
-      id: shortid.generate(),
-      type: 'Deposit',
-      amount: transactionSum,
-      date,
-    };
-
-    this.setState(prevState => ({
-      balance: prevState.balance + +transactionSum,
-      transactions: [...prevState.transactions, newTransDeposit],
-    }));
-    return transactionSum;
-  };
-
-  onWithdraw = amount => {
-    const transactionSum = amount.target.parentNode.children.amount.value;
-    this.inputClear(amount);
-    if (transactionSum <= 0) {
-      return this.notifyZeroOrLess();
-    }
-    if (transactionSum > this.state.balance) {
+    if (
+      amount.target.name === 'Withdrawal' &&
+      transactionSum > this.balance()
+    ) {
       return this.notifyNotEnoughMoney();
     }
 
     const date = new Date().toLocaleString();
 
-    const newTransWithdraw = {
+    const newTrans = {
       id: shortid.generate(),
-      type: 'Withdrawal',
+      type: `${amount.target.name}`,
       amount: transactionSum,
       date,
     };
 
-    this.setState(prevState => ({
-      balance: prevState.balance - +transactionSum,
-      transactions: [...prevState.transactions, newTransWithdraw],
-    }));
+    amount.target.name === 'Withdrawal'
+      ? this.setState(prevState => ({
+          transactions: [...prevState.transactions, newTrans],
+        }))
+      : this.setState(prevState => ({
+          transactions: [...prevState.transactions, newTrans],
+        }));
+
     return transactionSum;
+  };
+
+  balance = () => {
+    return this.allIncome() - this.allExpenses();
   };
 
   allIncome = () => {
@@ -94,12 +81,13 @@ class Dashboard extends Component {
   render() {
     const allIncome = this.allIncome();
     const allExpenses = this.allExpenses();
+    const balance = this.balance();
 
-    const { transactions, balance } = this.state;
+    const { transactions } = this.state;
 
     return (
       <div className={styles.dashboard}>
-        <Controls onDeposit={this.onDeposit} onWithdraw={this.onWithdraw} />
+        <Controls onDeposit={this.onTrans} onWithdraw={this.onTrans} />
         <Balance balance={balance} income={allIncome} expenses={allExpenses} />
         <TransactionHistory items={transactions} />
         <ToastContainer
