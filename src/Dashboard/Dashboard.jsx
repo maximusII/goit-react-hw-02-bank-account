@@ -12,6 +12,22 @@ class Dashboard extends Component {
     transactions: [],
   };
 
+  componentDidMount() {
+    const persistedTransactions = localStorage.getItem('transactions');
+
+    if (persistedTransactions) {
+      this.setState({ transactions: JSON.parse(persistedTransactions) });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    const { transactions } = this.state;
+
+    if (prevState.transactions !== transactions) {
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+    }
+  }
+
   notifyZeroOrLess = () => {
     toast.error('Введите сумму для проведения операции!');
   };
