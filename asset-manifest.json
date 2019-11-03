@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-02-bank-account/static/css/main.cda96de3.chunk.css",
-    "main.js": "/goit-react-hw-02-bank-account/static/js/main.6642693a.chunk.js",
-    "main.js.map": "/goit-react-hw-02-bank-account/static/js/main.6642693a.chunk.js.map",
+    "main.css": "/goit-react-hw-02-bank-account/static/css/main.d7fae046.chunk.css",
+    "main.js": "/goit-react-hw-02-bank-account/static/js/main.27821e94.chunk.js",
+    "main.js.map": "/goit-react-hw-02-bank-account/static/js/main.27821e94.chunk.js.map",
     "runtime-main.js": "/goit-react-hw-02-bank-account/static/js/runtime-main.6466877b.js",
     "runtime-main.js.map": "/goit-react-hw-02-bank-account/static/js/runtime-main.6466877b.js.map",
     "static/css/2.5dbdccff.chunk.css": "/goit-react-hw-02-bank-account/static/css/2.5dbdccff.chunk.css",
-    "static/js/2.e7b72342.chunk.js": "/goit-react-hw-02-bank-account/static/js/2.e7b72342.chunk.js",
-    "static/js/2.e7b72342.chunk.js.map": "/goit-react-hw-02-bank-account/static/js/2.e7b72342.chunk.js.map",
+    "static/js/2.a957c94d.chunk.js": "/goit-react-hw-02-bank-account/static/js/2.a957c94d.chunk.js",
+    "static/js/2.a957c94d.chunk.js.map": "/goit-react-hw-02-bank-account/static/js/2.a957c94d.chunk.js.map",
     "index.html": "/goit-react-hw-02-bank-account/index.html",
-    "precache-manifest.edb04f6401699d438500fd4c8689c3e6.js": "/goit-react-hw-02-bank-account/precache-manifest.edb04f6401699d438500fd4c8689c3e6.js",
+    "precache-manifest.81edba773011716e8f50f92ca4ee73a1.js": "/goit-react-hw-02-bank-account/precache-manifest.81edba773011716e8f50f92ca4ee73a1.js",
     "service-worker.js": "/goit-react-hw-02-bank-account/service-worker.js",
     "static/css/2.5dbdccff.chunk.css.map": "/goit-react-hw-02-bank-account/static/css/2.5dbdccff.chunk.css.map",
-    "static/css/main.cda96de3.chunk.css.map": "/goit-react-hw-02-bank-account/static/css/main.cda96de3.chunk.css.map"
+    "static/css/main.d7fae046.chunk.css.map": "/goit-react-hw-02-bank-account/static/css/main.d7fae046.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.6466877b.js",
     "static/css/2.5dbdccff.chunk.css",
-    "static/js/2.e7b72342.chunk.js",
-    "static/css/main.cda96de3.chunk.css",
-    "static/js/main.6642693a.chunk.js"
+    "static/js/2.a957c94d.chunk.js",
+    "static/css/main.d7fae046.chunk.css",
+    "static/js/main.27821e94.chunk.js"
   ]
 }
